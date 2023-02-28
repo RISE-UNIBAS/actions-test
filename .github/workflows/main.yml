@@ -2,15 +2,17 @@ name: Actions Test
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   pull_request:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.
       - uses: actions/setup-python@v4
         with:
           python-version: '3.x' 
@@ -18,8 +20,8 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          git config --global user.name "MHindermann"
-          git config --global user.email "maximilian.hindermann@gmail.com"
+          git config --global user.name "riseusertest"
+          git config --global user.email "riseusertest@gmail.com"
 
           git add -A
           git commit -m "Auto-updated master export"
