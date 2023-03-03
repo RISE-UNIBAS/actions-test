@@ -1,10 +1,10 @@
-name: Actions Test
+name: Actions Test, students branch
 
 on:
   push:
-    branches: [ main ]
+    branches: [ students ]
   pull_request:
-    branches: [ main ]
+    branches: [ students ]
 
 jobs:
   build:
@@ -18,11 +18,9 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          git config --global user.name "riseusertest"
-          git config --global user.email "riseusertest@gmail.com"
+          git config --global user.name "MHindermann"
+          git config --global user.email "maximilian.hindermann@gmail.com"
 
           git add -A
           git commit -m "Auto-updated master export"
           git push
-        
-      
